@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Session Handling </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Notes on session handling, cookies and local storage">
+        <meta name="author" content="Brandon Timothy P. Fernando">  
+        <meta name="keywords" content="HTML, CSS, JavaScript, Session Handling, Cookies, Local Storage" >
+    <link rel="stylesheet" href="/style.css">
+    <script src="script.js" defer></script>
+
+    <style>
+            .infoBox { /* SUBJECT TO CHANGE AND TO BE PUT IN STYLE.CSS */
+                background: white;
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                margin-bottom: 30px;
+                border: 1px solid #e1e4e8;
+            }
+            h1, h2 {
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+            }
+            pre {
+                background-color: #282c34; 
+                border-radius: 8px;
+                padding: 20px;
+                overflow-x: auto; 
+                border: 1px solid #181a1f;
+                margin: 20px 0;
+                text-align: left;
+            }
+            pre::before {
+                content: "JAVASCRIPT";
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                font-size: 0.7rem;
+                color: #5c6370;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+            code {
+                font-family: 'Fira Code', 'Courier New', Courier, monospace;
+                font-size: 0.95rem;
+                color: #abb2bf; 
+                white-space: pre;
+            }
+
+            pre code {
+                display: block;
+                line-height: 1.5;
+            }
+
+            ul {
+                padding-left: 20px;
+            }
+
+            li {
+                margin-bottom: 8px;
+            }   
+        </style>
+    </head>
+
+        <body>
+
+            <section id="intro">
+
+                <h1> Session Handling </h1>
+                
+                <p>
+                    When you visit a website, it often needs to remember who you are and what you do. This allows the program to be more pesonalized and interactive. All of this is done through session handling, allowing websites to store information about users and their interactions.
+                </p>
+                <p>
+                    There are two main ways to handle sessions: cookies and local storage.
+                </p>
+            
+            </section>
+
+            <section class="infoBox" id="cookies">
+                <h2> Cookies </h2>
+                <p> 
+                    You probably encountered the word cookies while browsing. Sadly, they aren't actual biscuits you can snack on. Instead, they are small pieces of data that websites use to store information in your browser. They are sent back and forth between browser and server, allowing websites to remember preferences such as:
+                    <ul>
+                        <li> Login Status </li>
+                        <li> Theme Preferences </li>
+                        <li> Page Analytics </li>
+                        <li> Session management </li>
+                    </ul>
+                </p>
+                <p> 
+                    If you don't want to be monitored by websites, you can disable cookies in you browser settings, or using Incognito mode. However, some websites may malfunction, prevent log-in, language settings, erase preferences, and more.
+                </p>
+                <p>
+                    Other limitations of cookies include its small size (usually around 4KB), as well as being easily accessed by third parties, which can lead to privacy concerns. In addition, it is deleted when browsers are closed, or based on a set lifespan. Nevertheless, cookies are still useful in personalization and session management.
+                </p>
+                <p>
+                    In JavaScript, you can create, access and delete cookies using document.cookie. This property is a string of key-value pairs (ex. name1=value1; etc.). Below is a smaple of creating and accessing a cookie:
+                </p>
+
+                <pre> <code> document.cookie = "username=Gregor Mendel"; // Creates a cookie named "username" with value "Gregor Mendel" 
+    console.log(document.cookie) //Output
+
+    document.cookie = "username=Charles Darwin"; //Updates the "username" cookie to "Charles Darwin"
+
+    document.cookie = "newUsername=Luois Pasteur; expires=Sat, 14 Feb 2026 12:00:00 UTC"; //Creates a cookie named "newUsername" with value "Louis Pasteur", that expires on February 14, 2026
+
+    let x = document.cookie; //Access all cookies
+
+    setCookie(Key,Value,Days)
+    getCookie(Key)
+    checkCookie() //Sample Functions</code> </pre>
+
+            </section>
+
+            <section class="infoBox">
+                <h2> Session </h2>
+                <p> 
+                    You probably encountered the word cookies while browsing. Sadly, they aren't actual biscuits you can snack on. Instead, they are small pieces of data that websites use to store information in your browser. They are sent back and forth between browser and server, allowing websites to remember preferences such as:
+                    <ul>
+                        <li> Login Status </li>
+                        <li> Theme Preferences </li>
+                        <li> Page Analytics </li>
+                        <li> Session management </li>
+                    </ul>
+                </p>
+                <p> 
+                    If you don't want to be monitored by websites, you can disable cookies in you browser settings, or using Incognito mode. However, some websites may malfunction, prevent log-in, language settings, erase preferences, and more.
+                </p>
+                <p>
+                    Other limitations of cookies include its small size (usually around 4KB), as well as being easily accessed by third parties, which can lead to privacy concerns. In addition, it is deleted when browsers are closed, or based on a set lifespan. Nevertheless, cookies are still useful in personalization and session management.
+                </p>
+                <p>
+                    In JavaScript, you can create, access and delete cookies using document.cookie. This property is a string of key-value pairs (ex. name1=value1; etc.). Below is a smaple of creating and accessing a cookie:
+                </p>
+            </section>
+
+            <section class="infoBox">
+                <h2> Local Storage </h2>
+                <p> 
+                    For the main focus of this lesson, we will discuss local storage- a more modern way to handle sessions that stores data on the client side (meaning your computer or device). It allows more data to be available for the website without sacrificing performance and loading time. Since it does not have to be sent to servers, it's also less vulnerable to security risks. It is usually used for:
+                    <ul>
+                        <li> Storing user preferences </li>
+                        <li> Caching data for offline use </li>
+                        <li> Saving game progress </li>
+                        <li> Storing form data </li>
+                    </ul>
+                </p>
+                <p> 
+
+                    To create data on localStorage, you can use a setItem method that takes in a key and value (note that value MUST BE A STRING)
+                    <br>
+                        <pre> <code>localStorage.setItem(key,value); 
+localStorage.setItem("atomicModel"="ElectronCloudModel"); </code> </pre>
+                        
+                    To access data, you use getItem method with key as the parameter
+                    <br>
+                        <pre><code>localStorage.getItem("key");
+localStorage.getItem("atomicModel");  </code></pre>
+
+                    To delete or remove data, use the removeItem method with key as parameter
+                    <br>
+                        <pre><code>localStorage.removeItem("key");
+localStorage.removeItem("atomicModel"); </code></pre>
+
+                    To clear all data, use the clearmethod (no parameters needed)
+                    <br>
+                        <pre><code>localStorage.clear(); </code></pre>
+                <p>
+                    Other limitations of cookies include its small size (usually around 4KB), as well as being easily accessed by third parties, which can lead to privacy concerns. In addition, it is deleted when browsers are closed, or based on a set lifespan. Nevertheless, cookies are still useful in personalization and session management.
+                </p>
+                <p>
+                    In JavaScript, you can create, access and delete cookies using document.cookie. This property is a string of key-value pairs (ex. name1=value1; etc.). Below is a smaple of creating and accessing a cookie:
+                </p>
+                
+            </section>
+
+                
+
+        </body>
+
+    </html>
