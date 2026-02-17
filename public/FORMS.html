@@ -2,81 +2,63 @@
 <html>
   
   <head>
-    <title> REVIEWER ON HTML FORMS </title>
+    <title> HTML Forms </title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   
   <body>
-      <h1> Reviewer on HTML FORM </h1>
-      
-        <p> 
-          Hello viewer! 
-        </p>
-        <p>
-          I decided that instead of having written reviewers in GDocs, ComSci 
-          specifically will have coded reviewers using OneCompiler. 
-        </p>
-        <p>
-          This type of reviewer encourages the use of laptops or tablets, since 
-          the viewport may be too small for phones. Ideally, you read both the code
-          AND output. I hope this reviewer helps! 
-        </p>
-        <p>
-          Thank you and good luck in your studies! You can do this. 
-        </p>
-        
-        
-        <h2> HTML FORMS </h2>
-        
-        <p>
-          
-          How do websites get information? You are probably familiar with log-in or sign-up forms,
-          and how we all hate them in some way. This uses <b>form</b>, allowing web applications to interact with users.
-          
-        </p>
-        
-        <h4> Basic form of Form </h4>
-        
-        <!-- CODE 1-->
-        <pre>
-        
-            <form action="page.html"> 
-                <input type="text" placeholder="See Code">
-                <button> Submit </button>
-            </form>
-            
-        </pre>
-        
-        
-        <p>
-          
-          Form has some attributes that allow elements to be controlled and handled. Below are examples:
-          
-        </p>
-        
-        <ul>
-          <li> action - sends the data to a page; can only act on one HTML page </li>
-          
-          <li> 
-            method - specifies how data is sent through two ways: 
-              <ul>
-                <li> GET - non-sensitive data sent to URL </li>
-                <li> POST - sensitive or large data sent to server </li>
-              </ul>
-          </li>
-          
-          <li> autocomplete - controls browser suggestions to autofill inputs (on or off) </li>
-          
-          <li> name - provides a name to the form, similar to class and id </li>
-          <li> disabled - </li>
-          <li> novalidate - a bool attribute that disables automatic form validation when submitting </li>
-          <li> target - specifices where response from server should be displayed </li>
-        </ul>
-        
-      <p>
-        
-        
-        
+      <h1> HTML Form </h1>
+
+      <p> 
+        Ever wondered how websites get your information? This is through HTML forms, which use input tags to gain information from the user. 
       </p>
+
+      <p> The best way to understand HTML form is to have a code for it: </p>
+
+      <h2> FORM EXAMPLE</h2>
+
+          <form action="sample.html" method="post">
+            <fieldset>
+              <legend> Bank Details</legend>
+                <label for="name"> Registered Name: </label> <!--Shows the text user sees -->
+                <input type="text" id="name" name="name"> <br><br> <!--Type tells the type of input, Id matches the for value to connect the two tags, and name is used by the server and labels it as name = [data]-->
+
+                <label for="email"> Email: </label>
+                <input type="email" id="email" name="email"> <br><br>
+
+                <label for="password"> Password: </label>
+                <input type="password" id="password" name="password"> <br><br>
+
+                <label for="account"> Account Number: </label>
+                <input type="number" id="account" name="account"> <br><br>
+
+                <label for="dob"> Date of Birth </label>
+                <input type="date" id="dob" name="dob"> <br><br>
+
+                <label for="bank"> Bank: </label>
+                <select id="bank" name="bank"> 
+                  <option value="bank1"> Bank Branch 1 </option>
+                  <option value="bank2"> Bank Branch 2 </option>
+                  <option value="bank3"> Bank Branch 3 </option>
+                </select> <br><br>
+
+                <p> Sex at Birth</p>
+                <input type="radio" id="male" name="sab" value="Male">
+                <label for="male">Male</label><br>
+
+                <input type="radio" id="female" name="sab" value="Female">
+                <label for="female">Female</label><br><br>
+
+                <label for="terms"> I agree to the terms and conditions </label>
+                <input type="checkbox" id="terms" name="terms"> <br><br>
+
+            </fieldset>
+          </form>
+
+      
+        
+        
+        
+    
   </body>
 </html>
