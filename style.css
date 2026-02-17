@@ -6,3 +6,47 @@
             padding: 0 20px;
             color: #333;
         }
+            .infoBox { /* SUBJECT TO CHANGE AND TO BE PUT IN STYLE.CSS */
+                background: white;
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                margin-bottom: 30px;
+                border: 1px solid #e1e4e8;
+            }
+            h1, h2 {
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+            }
+            pre {
+                background-color: #282c34; 
+                border-radius: 8px;
+                padding: 20px;
+                overflow-x: auto; 
+                border: 1px solid #181a1f;
+                margin: 20px 0;
+                text-align: left;
+            }
+            pre::before {
+                content: "JAVASCRIPT";
+                position: relative;
+                top: 5px;
+                right: 10px;
+                font-size: 0.7rem;
+                color: #5c6370;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+            code {
+                font-family: 'Fira Code', 'Courier New', Courier, monospace;
+                font-size: 0.95rem;
+                color: #abb2bf; 
+                white-space: pre;
+            }
+
+            pre code {
+                display: block;
+                line-height: 1.5;
+            }
