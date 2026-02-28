@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <form id ="loginForm">
+            <input type="email" id="email" placeholder="Email" required> <br> <br>
+            
+            <label> <input type="checkbox" id = "remember"> Remember Me </label> <br> <br>
+        <button type="submit"></button>
+        </form>
+
+        <script>
+
+            const email = document.getElementById("email");
+            const remember = document.getElementById("remember");
+
+            const saveEmail = localStorage.getItem("userEmail");
+            if(saveEmail){
+                email.value = saveEmail;
+                remember.checked = true;
+            }
+
+            document.getElementById('loginForm').onsubmit = (event) => {
+                event.preventDefault();
+
+                if(remember.checked){
+                    localStorage.setItem('userEmail', email.value);
+                }
+                else{
+                    localStorage.removeItem('userEmail');
+                }
+
+                alert("Successful Log In.");
+            }
+
+
+
+        </script>
+
+    </body>
+</html>
